@@ -1,5 +1,7 @@
 # Use node:alpine as the base image
-FROM node:latest-alpine
+FROM node:18.15-alpine
+
+RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.cloud.tencent.com/g' /etc/apk/repositories
 
 # Set the working directory
 WORKDIR /usr/src
